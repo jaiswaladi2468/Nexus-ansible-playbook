@@ -3,7 +3,7 @@
   hosts: server
   tasks:
     - name: Update apt repo and cache
-      ansible.builtin.apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+      ansible.builtin.apt: update_cache=yes 
     - name: Install Java 8
       ansible.builtin.apt: name=openjdk-8-jre-headless
     - name: Install net-tools
