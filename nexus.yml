@@ -1,6 +1,7 @@
 ---
 - name: Install java and net-tools
   hosts: server
+  become: true
   tasks:
     - name: Update apt repo and cache
       ansible.builtin.apt: update_cache=yes 
@@ -11,6 +12,7 @@
 
 - name: Download and unpack Nexus installer
   hosts: server
+  become: true
   tasks:
     - name: Check nexus folder stats
       ansible.builtin.stat:
@@ -40,6 +42,7 @@
 
 - name: Create nexus user to own nexus folders
   hosts: server
+  become: true
   tasks:
     - name: Ensure group nexus exists
       ansible.builtin.group:
